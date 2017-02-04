@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pres_name: MyString
+  pres_date: 2017-02-04
+  num_p_day: 1
+  amount_time: 1
+  duration: 1
+  number_id: MyString
+
+two:
+  pres_name: MyString
+  pres_date: 2017-02-04
+  num_p_day: 1
+  amount_time: 1
+  duration: 1
+  number_id: MyString

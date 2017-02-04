@@ -1,0 +1,2 @@
+class PresTable < ApplicationRecord
+end
