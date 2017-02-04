@@ -10,14 +10,14 @@ module Client
 			end
 
 			# getting single clients
-			desc "get a single clients"
-			params do
-				require :number_id, type: String
-			end
+			# desc "get a single clients"
+			# params do
+			# 	requires :number_id, type: String
+			# end
 
-			get ':number_id' do
-				ClientInfo.find(params[:number_id])
-			end
+			# get '/client' do
+			# 	ClientInfo.find(params[:number_id])
+			# end
 
 			# params check
 			desc "create a new clients"
@@ -36,14 +36,16 @@ module Client
 					})
 			end
 
-			# deleting clients
+			# deleting client
 			desc "delete a client"
 			params do
-				require :number_id, type: String
+				requires :id, type: String
 			end
-			delete ':number_id' do 
-				ClientInfo.find(params[:number_id]).destroy!
+			delete ':id' do 
+				ClientInfo.find(params[:id]).destroy!
 			end
+
+			#updating client
 
 
 		end
