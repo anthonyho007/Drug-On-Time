@@ -4,6 +4,8 @@ class CreateClientInfos < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.string :number_id
+      t.string :password
+      t.integer :gift_point
 
       t.timestamps
     end

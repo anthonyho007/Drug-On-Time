@@ -7,6 +7,7 @@ class CreatePresTables < ActiveRecord::Migration[5.0]
       t.integer :amount_time
       t.integer :duration
       t.string :number_id
+      t.integer :doctor_u_id
 
       t.timestamps
     end

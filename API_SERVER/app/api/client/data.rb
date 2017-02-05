@@ -19,12 +19,22 @@ module Client
 			# 	ClientInfo.find(params[:number_id])
 			# end
 
+			# desc "hitting gift points"
+			# params do 
+			# 	requires :email, type:String
+			# end
+			# post 'hit' do
+			# 	ClientInfo.where("email = ?", params[:email]).update.increment!(:gift_point)
+			# end
+
+
 			# params check
 			desc "create a new clients"
 			params do 
 				requires :name, type:String
 				requires :email, type:String
 				requires :number_id, type:String
+				requires :password, type:String
 			end
 
 			# creating new clients
@@ -32,8 +42,18 @@ module Client
 				ClientInfo.create!({
 					name:params[:name],
 					email:params[:email],
-					number_id:params[:number_id]
+					number_id:params[:number_id],
+					password:params[:password],
+					gift_point:0
 					})
+			end
+			desc "login"
+			params do
+				requires :email, type:String
+			end
+
+			get 'login' do 
+				ClientInfo.where("email = ?", params[:email])
 			end
 
 			# deleting client

@@ -2,14 +2,10 @@
 
 one:
   name: MyString
+  doctor_id: 1
   email: MyString
-  number_id: MyString
-  password: MyString
-  gift_point: 1
 
 two:
   name: MyString
+  doctor_id: 1
   email: MyString
-  number_id: MyString
-  password: MyString
-  gift_point: 1

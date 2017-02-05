@@ -8,6 +8,15 @@ module Prescription
 				PresTable.all
 			end
 
+			desc "get patient meds"
+			params do 
+				requires :number_id, type:String
+			end
+
+			get ':number_id' do
+				PresTable.where("number_id = ?", params[:number_id])
+			end
+
 
 			desc "create new prescription column for patient"
 
@@ -18,6 +27,7 @@ module Prescription
 				requires :amount_time, type:Integer
 				requires :duration, type:Integer
 				requires :number_id, type:String
+				requires :doctor_u_id, type:String
 			end
 			post do
 				PresTable.create!({
@@ -28,6 +38,7 @@ module Prescription
 					amount_time:params[:amount_time],
 					duration:params[:duration],
 					number_id:params[:number_id],
+					doctor_u_id:params[:doctor_u_id]
 					})
 			end
 		end
