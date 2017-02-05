@@ -1,14 +1,288 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>APIServer</title>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Drug On Time</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+	<%= stylesheet_link_tag    'device-mockups', media: 'all' %>
+    <!-- Theme CSS -->
+
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
 
   <body>
+
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Drug On Time</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#page-top">Idea</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#features">Features</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Expanding</a>
+                    </li>
+                    <li>
+                        <a  data-toggle="modal" href="#login">log in</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+	<header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1>Remembering to take your medication can be difficult.</h1>
+                            <h2>We made it easy to encourage you!</h2>
+                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait black">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src=<%= asset_path('drug-on-time.png') %> class="img-responsive" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- login modal -->
+   <div id="login" class="modal fade">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header bg-info">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+           <h4 class="modal-title">Login to Drugs on Time.</h4>
+         </div>
+         <div class="modal-body">
+
+
+           <div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#signup" aria-controls="signup" role="tab" data-toggle="tab">Sign up</a></li>
+    <li role="presentation"><a href="#loginPage" aria-controls="loginPage" role="tab" data-toggle="tab">Log in</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="signup">
+
+      <form>
+
+      	<h5 class="m-b-2">Sign up Information</h5>
+
+			<fieldset class="form-group">
+				<label for="name">name</label>
+				<input type="text" class="form-control" id="name">
+			</fieldset>
+
+			<fieldset class="form-group">
+				<label for="mail">Email</label>
+				<input type="email" class="form-control" id="mail">
+			</fieldset>
+        	<fieldset class="form-group">
+          		<label for="password">Password</label>
+          		<input type="password" class="form-control" id="password">
+	        </fieldset>
+	        <fieldset class="form-group">
+	          	<label for="passwordConfirm">Confirm Password</label>
+	          	<input type="Password" class="form-control" id="passwordConfirm">
+	        </fieldset>
+	        <fieldset class="form-group">
+	          	<label for="HealthID" class="form-controll">Are a doctor?</label></br>
+	          	<input type="checkbox" class="" id="DrCheck">  Yes I am a doctor!</input>
+	        </fieldset>
+	        <fieldset class="form-group DrIDC">
+	          	<label for="DrID">Please provide Dr ID</label>
+	          	<input type="text" class="form-control" id="DrID">
+	        </fieldset>
+	        <fieldset class="form-group PSIDC">
+	          	<label for="HealthID">Please provide Health ID</label>
+	          	<input type="text" class="form-control" id="HealthID">
+	        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+
+      </form>
+      <!-- /registration form -->
+
+    </div>
+   	<div role="tabpanel" class="tab-pane" id="loginPage">
+
+      <form>
+      <h5 class="m-b-2">Login Information</h5>
+        <fieldset class="form-group">
+          <label for="mail">Email</label>
+          <input type="email" class="form-control" id="mail">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password">
+        </fieldset>
+        <button type="submit1" class="btn btn-primary btn-lg">Login</button>
+
+      </form>
+      <!-- /login form -->
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+         </div>
+       </div><!-- /.modal-content -->
+     </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+
+
+
     <%= yield %>
+
+
+     <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Stop forgetting.<br>Start taking!</h2>
+                <a data-toggle="modal" href="#login" class="btn btn-outline btn-xl">Let's Get Started!</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section id="contact" class="contact bg-primary">
+        <div class="container">
+            <h2>We <i class="fa fa-heart"></i> new friends!</h2>
+            <ul class="list-inline list-social">
+                <li class="social-twitter">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="social-google-plus">
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2017 Drug On Time. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+        <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <%= javascript_include_tag 'new-age', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript">
+
+    var countChecked = function() {
+      var n = $( "input:checked" ).length;
+      if ( n > 0){
+        $(".DrIDC").css("display", "block");
+        $(".PSIDC").css("display", "none");
+      }else{
+        $(".DrIDC").css("display","none");
+        $(".PSIDC").css("display","block");
+      }
+    };
+    countChecked();
+
+    $( "input[type=checkbox]" ).on( "click", countChecked );
+
+
+  // function coun  var n = $( "input:checked" ).length;
+
+    </script>
   </body>
 </html>
